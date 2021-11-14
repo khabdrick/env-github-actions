@@ -1,0 +1,19 @@
+name: env_tutorial
+on: [pull_request, push]
+
+env:
+  API_KEY: XXXXXXXXXXXX    # Environment variable
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: name for job1
+        run: echo "The API key is:/ ${{env.API_KEY}}"   # reference your environment variables
+
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: name for job2
+        run: echo "The API key is:/ $API_KEY"  # another way reference your environment variables
