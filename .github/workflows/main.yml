@@ -6,9 +6,9 @@ jobs:
     runs-on: ubuntu-latest # The type of runner that the job will run on
     steps:
       - name: step 1
-				env:
-	        API_KEY: XXXXXXXXXXXX    # Environment variable
-        run: echo "The API key is:${{env.API_KEY}}"   # reference your environment variables
+        env:
+	  API_KEY: XXXXXXXXXXXX    # Environment variable
+	run: echo "The API key is:${{env.API_KEY}}"   # reference your environment variables
       - name: step 2
         run: echo "The API key is:${{env.API_KEY}}"   # reference your environment variables
 		
