@@ -4,14 +4,11 @@ on: [pull_request, push] # Triggers the workflow on when there is a push or pull
 jobs:
   job1:
     runs-on: ubuntu-latest # The type of runner that the job will run on
-    env:
-      API_KEY: XXXXXXXXXXXX    # Environment variable
     steps:
-      - name: name for job1
+      - name: step 1
+				env:
+	        API_KEY: XXXXXXXXXXXX    # Environment variable
         run: echo "The API key is:${{env.API_KEY}}"   # reference your environment variables
-
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: name for job2
-        run: echo "The API key is:$API_KEY"  # another way reference your environment variables
+      - name: step 2
+        run: echo "The API key is:${{env.API_KEY}}"   # reference your environment variables
+		
