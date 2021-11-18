@@ -6,11 +6,11 @@ jobs:
     runs-on: ubuntu-latest # The type of runner that the job will run on
     steps:
       - name: step 1
-        run: echo "The API key is:${{secrets.API_KEY}}"   # reference your environment variables
-        
-
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: step 1
-        run: echo "The API key is:${{secrets.API_KEY}}"  # another way reference your environment variables
+        run: |
+          echo "The job_id is:GITHUB_JOB"   # reference the default environment variables
+          echo "The id of this action is:GITHUB_ACTION"   # reference the default environment variables
+          echo "The file path of this action is:GITHUB_ACTION_PATH"  
+          echo "The run id is:GITHUB_RUN_ID" 
+          echo "The GitHub Actor's name is:GITHUB_ACTOR
+      - name: step 2
+        run: echo "The run id is:GITHUB_RUN_ID"  
